@@ -1,0 +1,298 @@
+@font-face {
+  font-family: 'Rough Typewriter';
+  src: url('/assets/fonts/rough_typewriter-D3x-fI0p.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Eyes See Souls';
+  src: url('/assets/fonts/eyes-see-souls.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: 'Courier New', Monaco, Consolas, monospace;
+  background-color: #000000;
+  color: #dfdfdf;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 450px);
+  gap: clamp(40px, 5vw, 72px);
+  justify-content: center;
+  align-items: center;
+  width: min(100%, 1100px);
+  min-height: 100svh;
+  margin: 0 auto;
+  padding: 64px 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.content {
+  text-align: left;
+  min-width: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.name {
+  font-family: 'Eyes See Souls', sans-serif;
+  font-size: 6.5rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin-bottom: 0;
+  line-height: 1.15;
+  letter-spacing: 4px;
+  text-transform: lowercase;
+  text-shadow:
+    3px 3px 0px rgba(176, 0, 0, 0.5),
+    -2px -2px 0px #1a1a1a;
+  display: inline-block;
+}
+
+.social-links {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+  font-family: 'Rough Typewriter', 'Courier New', monospace;
+  font-weight: bold;
+}
+
+.link {
+  color: #b4b4b4;
+  text-decoration: none;
+  font-size: 1.1rem;
+  text-transform: lowercase;
+  padding: 0 4px;
+}
+
+.link:hover {
+  background-color: #b00000;
+  color: #000;
+  text-decoration: line-through;
+}
+
+.separator {
+  margin: 0 12px;
+  color: #b00000;
+  font-family: 'Courier New', monospace;
+}
+
+.projects-section {
+  margin-top: 40px;
+}
+
+.section-title {
+  font-family: 'Rough Typewriter', 'Courier New', monospace;
+  font-size: 1.35rem;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: 1px;
+  color: #ffffff;
+  margin-bottom: 12px;
+  text-transform: lowercase;
+  text-shadow: 2px 2px 0px rgba(176, 0, 0, 0.5);
+}
+
+.project-item {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  font-family: 'Rough Typewriter', monospace;
+  line-height: 1.2;
+}
+
+.project-item img {
+  filter: invert(1) drop-shadow(0 0 2px #fff);
+  user-select: auto;
+  -webkit-user-select: auto;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Logos that are already light-colored should not be inverted */
+.project-item img.no-invert {
+  filter: drop-shadow(0 0 2px #fff);
+  user-select: auto;
+  -webkit-user-select: auto;
+}
+
+.project-item .project-name,
+.project-item .project-desc,
+.project-item .link {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.projects-section .project-item .link {
+  text-transform: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.project-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-transform: none;
+}
+
+.project-desc {
+  font-size: 0.95rem;
+  color: #ababab;
+  font-weight: 400;
+}
+
+.project-desc::before {
+  content: '- ';
+}
+
+.link:focus-visible {
+  outline: 1px dashed #dfdfdf;
+  outline-offset: 4px;
+}
+
+.music-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  min-width: 0;
+}
+
+.dj-image {
+  display: block;
+  width: 280px;
+  max-width: 80%;
+  height: auto;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 44px;
+    max-width: 600px;
+    padding: 48px 24px 64px;
+  }
+
+  .content {
+    text-align: center;
+  }
+
+  .music-section {
+    width: 100%;
+    max-width: 450px;
+    justify-self: center;
+  }
+
+  .dj-image {
+    width: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .name {
+    font-size: 3.5rem;
+  }
+
+  .social-links,
+  .link {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    gap: 32px;
+    padding: 32px clamp(16px, 5vw, 24px) 56px;
+  }
+
+  .name {
+    font-size: clamp(3.5rem, 16vw, 5rem);
+  }
+
+  .social-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 0;
+  }
+
+  .social-links .link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .separator {
+    margin: 0;
+  }
+
+  .projects-section {
+    width: 100%;
+    max-width: 360px;
+    margin: 24px auto 0;
+  }
+
+  .projects-section .project-item .link {
+    display: grid;
+    grid-template-columns: 20px minmax(0, 1fr);
+    column-gap: 8px;
+    row-gap: 3px;
+    width: 100%;
+    min-height: 44px;
+    padding: 6px 4px;
+    text-align: left;
+  }
+
+  .project-item img {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .project-name {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 1.05rem;
+  }
+
+  .project-desc {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .project-desc::before {
+    content: none;
+  }
+
+  .music-section {
+    gap: 16px;
+  }
+
+  .dj-image {
+    width: clamp(180px, 54vw, 220px);
+  }
+}
